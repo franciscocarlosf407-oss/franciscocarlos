@@ -1,4 +1,3 @@
-
 const projetos = [
     {
         id: 1,
@@ -37,7 +36,6 @@ const projetos = [
         linkRepo: "#"
     }
 ];
-
 function renderizarProjetos() {
     const container = document.getElementById('projectsContainer');
     
@@ -73,12 +71,10 @@ function toggleTheme() {
     
     if (body.classList.contains('dark-theme')) {
         btn.textContent = '🌙';
-        // Adicione variáveis CSS para tema escuro se desejar
-    } else {
+           } else {
         btn.textContent = '☀️';
     }
 }
-
 function initScrollAnimation() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -88,7 +84,6 @@ function initScrollAnimation() {
             }
         });
     });
-
     document.querySelectorAll('.project-card').forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
@@ -96,10 +91,8 @@ function initScrollAnimation() {
         observer.observe(card);
     });
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     renderizarProjetos();
     initScrollAnimation();
-    
-    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 });
